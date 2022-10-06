@@ -13,6 +13,7 @@ A short explination of common style things that people forget!
 ## Spacing/ Whitespace
 - Have both veritical and horizontal whitespace
 - No big gaps in code (multiple random blank lines)
+- Usually gaps between blocks of code are 1 line
 - Split code into "paragraphs"
 
 ## `#defines`
