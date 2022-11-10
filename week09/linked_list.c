@@ -60,9 +60,6 @@ struct node *delete_list(struct node *head) {
 
 
 
-
-
-
 // copy all nodes from a linked list and return the new head
 struct node *copy(struct node *old_head) {
 
@@ -70,11 +67,17 @@ struct node *copy(struct node *old_head) {
     if (old_head == NULL) {
         return NULL;
     }
-    struct node *old_curr = old_head;
+    // create copy of first node in original list
     struct node *new_head = create_node(old_curr->data);
+    // old_curr keeps track of the data from the old linked list we want to copy
+    struct node *old_curr = old_head;
+    // new_prev keeps track of the previous node before the new one
     struct node *new_prev = new_head;
+
+    // old_curr now is at second node (or NULL if list only has 1 node)
     old_curr = old_curr->next;
 
+    // keep creating a new copies node and append it to end of new list
     while (old_curr != NULL) {
         struct node *new = create_node(old_curr->data);
         new_prev->next = new;
@@ -85,10 +88,6 @@ struct node *copy(struct node *old_head) {
     // return new head
     return new_head;
 }
-
-
-
-
 
 // create a new list which is a combination of first_list + second_list
 struct node *list_append(struct node *first_list, struct node *second_list) {
